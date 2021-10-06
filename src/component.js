@@ -1,4 +1,4 @@
-export default (text = 'Hello, OrgChart') => {
+export default (text = 'JavaScript') => {
   const element = document.createElement('h1');
 
   element.innerHTML = text;
