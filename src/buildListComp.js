@@ -1,9 +1,13 @@
 import buildData from './data-build.json';
 
 export default () => {
-  const element = document.createElement('table');
+  const element = document.createElement('ul');
 
-  element.innerHTML = text;
+  element.innerHTML = buildData.map(item => `
+    <li>
+      ${item.name} -- ${item.description}
+    </li>
+  `).join('');
 
   return element;
 };

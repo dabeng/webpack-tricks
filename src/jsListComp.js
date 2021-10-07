@@ -1,14 +1,13 @@
 import jsData from './data-js.xml';
 
 export default () => {
-  const element = document.createElement('table');
+  const element = document.createElement('ul');
 
   element.innerHTML = jsData.frameworks.framework.map(item => `
-    <tr>
-      <td>${item.name[0]}</td>
-      <td>${item.description[0]}</td>
-    </tr>
-  `);
+    <li>
+      ${item.name[0]} -- ${item.description[0]}
+    </li>
+  `).join('');
 
   return element;
 };
