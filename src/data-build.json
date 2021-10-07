@@ -1,0 +1,14 @@
+[
+  {
+    "name": "GRUNT",
+    "description": "The JavaScript Task Runner"
+  },
+  {
+    "name": "Gulp",
+    "description": "A toolkit to automate & enhance your workflow"
+  },
+  {
+    "name": "webpack",
+    "description": "A static module bundler for modern JavaScript applications"
+  }
+]

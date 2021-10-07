@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameworks>
+  <framework>
+    <name>Angular</name>
+    <description>The modern web developer's platform</description>
+  </framework>
+  <framework>
+    <name>React</name>
+    <description>A JavaScript library for building user interfaces</description>
+  </framework>
+  <framework>
+    <name>Vue.js</name>
+    <description>The Progressive JavaScript Framework</description>
+  </framework>
+</frameworks>
