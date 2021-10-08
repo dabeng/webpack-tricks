@@ -1,7 +1,19 @@
+@import "bulma";
+
 body {
   padding: 0;
   margin: 0;
   background: url('./background.svg');
+}
+
+ul {
+  list-style: initial;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+li {
+  padding: 0.5rem;
 }
 
 .logo {

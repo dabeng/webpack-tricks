@@ -5,7 +5,6 @@ import cssListComp from './cssListComp';
 import buildListComp from './buildListComp';
 
 import './style.css';
-
 import './style2.css';
 import './style3.scss';
 
