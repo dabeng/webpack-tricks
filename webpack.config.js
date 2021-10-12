@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: {
@@ -27,7 +29,11 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
@@ -51,5 +57,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Webpack Tricks',
     }),
-  ],
+  ].concat(devMode ? [] : [new MiniCssExtractPlugin({filename: '[name].css'})]),
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        },
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      }
+    }
+  },
 };
